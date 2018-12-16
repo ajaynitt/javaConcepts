@@ -4,3 +4,52 @@ You can only extend one class in your child class,
 but you can implement as many interfaces as you would like.
 
 ================================================================================
+https://stackoverflow.com/questions/10839131/implements-vs-extends-when-to-use-whats-the-difference
+=======================
+(1)
+public interface ExampleInterface {
+    public void doAction();
+    public String doThis(int number);
+ }
+
+ public class sub implements ExampleInterface {
+     public void doAction() {
+       //specify what must happen
+     }
+
+     public String doThis(int number) {
+       //specfiy what must happen
+     }
+ }
+
+
+(2)
+ public class SuperClass {
+    public int getNb() {
+         //specify what must happen
+        return 1;
+     }
+
+     public int getNb2() {
+         //specify what must happen
+        return 2;
+     }
+ }
+
+ public class SubClass extends SuperClass {
+      //you can override the implementation
+      @Override
+      public int getNb2() {
+        return 3;
+     }
+ }
+
+
+(3)
+ Subclass s = new SubClass();
+  s.getNb(); //returns 1
+  s.getNb2(); //returns 3
+
+  SuperClass sup = new SuperClass();
+  sup.getNb(); //returns 1
+  sup.getNb2(); //returns 2
