@@ -14,7 +14,38 @@ According to Java white paper, it is a reusable software component.
 A bean encapsulates many objects into one object, so we can access this object from multiple places. Moreover, 
 it provides the easy maintenance.
 
+Example of Java Bean Class
+========================
+package mypack;  
+public class Employee implements java.io.Serializable{  
+    private int id;  
+    private String name;  
+
+    public Employee(){}  
+
+    public void setId(int id){this.id=id;}  
+    public int getId(){return id;}  
+    public void setName(String name){this.name=name;}  
+    public String getName(){return name;}  
+}  
+
+    package mypack;  
+    public class Test{  
+    public static void main(String args[]){  
+    Employee e=new Employee();//object is created  
+    e.setName("Arjun");//setting value to the object  
+    System.out.println(e.getName());  
+    }}  
 
 =======================Link for existing project============
 https://gist.github.com/ajaynitt/56a2853afad8b1635636f8948ea0d3eb
 ===============================================================
+
+(1) Difference between POJO class and Bean class
+Ans : Pojo class doesn't need to implement Serilizable .Rest aresame as java Beans class.
+It can have only these :
+1.No arg Constructor(user defined or compiler generated).
+2.private and non-static member variable
+2.public Accessors (Setters and Getters) for member variable
+
+(2)
