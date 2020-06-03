@@ -15,7 +15,7 @@ A bean encapsulates many objects into one object, so we can access this object f
 it provides the easy maintenance.
 
 Example of Java Bean Class
-========================
+===========================
 package mypack;  
 public class Employee implements java.io.Serializable{  
     private int id;  
@@ -36,6 +36,10 @@ public class Employee implements java.io.Serializable{
     e.setName("Arjun");//setting value to the object  
     System.out.println(e.getName());  
     }}  
+
+Another Example : if we want to pass information from Service layer to DAO layer to save information to database ,
+in that case rather than passing all attributes through method paramers, we can pass just one object (java bean class)
+and respective fields can be retrieved in the DAO layers if needed.
 
 =======================Link for existing project============
 https://gist.github.com/ajaynitt/56a2853afad8b1635636f8948ea0d3eb
